@@ -16,3 +16,4 @@ def load_questions(filepath='questions.csv'): #creating function to load questio
                 ],
                 "answer":int(row[{answer}])-1 #index is always 0 so -1
             })
+    return questions
