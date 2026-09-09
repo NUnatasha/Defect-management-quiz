@@ -1,2 +1,6 @@
 questions,option1,option2,option3,option4,answer
-What is a P1 priority defect mean?,Medium,Critical,High,Low,2
+What does a P1 priority defect mean?,Medium,Critical,High,Low,2
+What does a S3 severity defect mean?, Medium,Critical,High,Low,1
+Once a defect is fixed what must be done before closure?,Reject the defect, Restest the defect,Nothing,Lower the severity and priority,2
+What is meant by severity?,How severely the defect impacts the system,How severely the defect impacts the business,How hard the defect was to find,How long the defect takes to reproduce,1
+What is meant by priority?,How importan the defect is to the CEO,How bad the defect disrupts the business,How difficult the defect is to resolve,How bad the defect affects your holiday,2
