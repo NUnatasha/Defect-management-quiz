@@ -99,8 +99,12 @@ List of programming languages amnd libaries used.
 # Testing
 
 ## Manual testing
-| Test | Purpose |
-|------------|---------|
+|Test|Test Data|Expected Result|Actual Result|Status|
+|----|---------|---------------|-------------|------|
+|Launch app|Run main.py file|GUI window opens successfully|works as expected|Pass|
+|Enter valid name|"Natasha"|Name accepted and saved into csv file once quiz is completed|Works as expected|Pass|
+|Enter invalid naem|123|Name not accepted and error message pops up|
+
 
 ## automation testing
 
