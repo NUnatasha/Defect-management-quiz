@@ -123,7 +123,13 @@ if __name__=="__main__":
     unittest.main(verbosity=1)
 ``` 
 ![proof of unit test 1](image-2.png)
-
+then I add a function that will check that the questions are successfully loading from csv file.
+```python
+def test_load_questions_runs(self):
+    questions=load_questions()
+    self.assertIsNotNone(questions)
+```
+![proof of unit test 2](image-3.png)
 
 
 # Documentatuon

@@ -10,5 +10,6 @@ class TestSmoke(unittest.TestCase):
         questions=load_questions()
         self.assertIsNotNone(questions)
 
+
 if __name__=="__main__":
     unittest.main(verbosity=2)
