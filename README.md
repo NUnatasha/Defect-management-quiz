@@ -7,8 +7,7 @@ this is my summative two code for IFCP course, year one
 3. Development
 4. Testing
 5. User Documentation
-6. Technical Documentation
-7. Evaluation 
+6. Evaluation 
 
 # Introduction
 As new websites, apps and software system are becoming increasingly important to business operations so does the quality. It is important that these applications are efficient, reliable and provide great customer sattisfaction. 
@@ -18,6 +17,8 @@ The Software Development Life Cycle (SDLC) includes the important part of testin
 This project is a simple multiple choice quiz using python(https://www.python.org) and Tkinter (). The purpose of this quiz application is to test the user on their knowledge on defect Management and to provide training. Five qustions multiple choice questions are displayed one at a time allow the user to select one option out of four.
 
 # Design 
+## Figma Design
+
 
 ## Functional Requirements
 1. Load questions from a CSV file
@@ -34,6 +35,17 @@ This project is a simple multiple choice quiz using python(https://www.python.or
 3. Maintainable code
 4. Readable code
 
+## Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+|Python| Programming Language used to code app|
+|Tkinter| GUI, used to create Graphical User. Interface|
+|CSV|Used to load data from and and input data into|
+|unitest|Used to perform automated test|
+
+## Class Diagram
+
 # Developnent
 ## technologies used
 1. Python
@@ -49,10 +61,10 @@ CSV structure: questions,option1,option2,option3,option4,answer
 # Testing
 
 ## Manual testing
+# Documentatuon
+## Technical Documentation
 
-# Technical Documentation
-
-# User Documentation
+###Documentatuon User Documentation
 
 # Evalution
 - add date and time to show date of when user takes quiz
