@@ -131,6 +131,18 @@ def test_load_questions_runs(self):
 ```
 ![proof of unit test 2](image-3.png)
 
+then I add character_check functions that will check if the validation of names is correct. This will not work since there is no validation in the main.py file so we should recieve an error
+
+```python
+ def test_character_check_happy(self):
+        self.assertTrue(character_check("Natasha"))
+        self.assertTrue(character_check("Natasha Zinyuke"))
+
+def test_character_check_unhappy(self):
+    self.assertTrue(character_check("Natasha001"))
+    self.assertTrue(character_check("#Natashaisthenumber1best"))
+```
+![Proof of unit test 3](image-4.png)
 
 # Documentatuon
 
