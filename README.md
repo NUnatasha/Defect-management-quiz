@@ -111,9 +111,9 @@ List of programming languages amnd libaries used.
 # Documentatuon
 
 ## User Documentation
-Step 1: Lanuch the application
+#### Step 1: Lanuch the application
 Step 2: Enter your name
-Steo 3: Read questions carefully and click your chosen answer
+Step 3: Read questions carefully and click your chosen answer
 Step 4: Once feedback is recieved click next to move onto the next question
 Step: Repeat steps 3 and 4 until quiz is complete
 
