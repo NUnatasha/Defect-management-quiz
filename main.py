@@ -1,4 +1,5 @@
 import tkinter as tk
+import re # used to check names
 from tkinter import messagebox
 import csv
 
@@ -140,6 +141,9 @@ class Quizzapp(tk.Tk):
            self.save_results()
            messagebox.showinfo("Well done! You completed the quiz!")
            self.destroy()
+
+    def character_check(name:str) -> bool:
+        return not re.search(r"\d",name)
 
     def save_results(self):
         with open("results.csv",mode="a",newline="") as file:
