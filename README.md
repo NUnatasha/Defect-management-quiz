@@ -56,6 +56,7 @@ List of programming languages amnd libaries used.
 |unitest|Used to perform automated test|
 
 ## Class Diagram
+![class diagram](image-1.png)
 
 # Developnment
 
