@@ -18,7 +18,15 @@ This project is a simple multiple choice quiz using python(https://www.python.or
 
 # Design 
 ## Figma Design
+This is the initial design for the quiz. The user would be greeted with a welecome screen in which they enter name. Then one question will show up at a time display the question at the top and the four option buttons beneath. Once the user clicked an option the feedback will be shown either "Correct" or "Incorrect" and move onto the next question. Each time the score would be calculated and show in the left-bottom corner. Initially I had designe the user journey to only be a few simple steps:
+1. Open app
+2. Enter name and submit
+3. Click your choice
+4. Repeat step 3 until end of quiz
+
 ![Defect Managemnet Figma Design](image.png)
+
+I have slighly changed from the initial design and instead the user is allowed to change go to the next question on their own accord. I decided this so that the user can then review the question and try understand as to why the may have gotten it wrong instead of immediately switch to the next question and not having any time memorise or learn. 
 
 
 ## Functional Requirements
