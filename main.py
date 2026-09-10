@@ -132,10 +132,8 @@ class Quizzapp(tk.Tk):
             self.show_questions()
         else:
            self.save_results()
-           messagebox.showinfo(
-               "Well done! You completed the quiz!"
-               self.destroy()
-            )
+           messagebox.showinfo("Well done! You completed the quiz!")
+           self.destroy()
 
     def save_results(self):
         with open("results.csv",mode="a",newline="") as file:
