@@ -57,8 +57,8 @@ class Quizzapp(tk.Tk):
                 width=40,
                 command=lambda i=i: self.check_answer(i)
             )
-
-        button.pack(pady=8)
+            button.pack(pady=8)
+            self.choice_buttons.append(button)
 
         self.feedback_label = tk.Label(
             self,
@@ -92,7 +92,7 @@ class Quizzapp(tk.Tk):
         question = self.questions[self.current_question]
 
         self.question_label.config(
-            text=question["question"]
+            text=question["questions"]
         )
 
         for i in range (4):
@@ -107,7 +107,7 @@ class Quizzapp(tk.Tk):
     def check_answer(self,choice):
         question = self.questions[self.current_question]
 
-        if choice == questions["answer"]:
+        if choice == question["answer"]:
             self.score += 1
 
             self.score_label.config(
