@@ -57,21 +57,54 @@ List of programming languages amnd libaries used.
 
 ## Class Diagram
 
-# Developnent
-## technologies used
-1. Python
-2. Tkinter
-3. CSV module
+# Developnment
 
 ## Project Structure
- hehrheeuj
+ Defect-Management--uiz-summative-two
+ |
+ |-main.py
+ |-question.csv
+ |-quiz_data.py
+ |-results.csv
 
-The questions are stored in a CSV file which is pulled and loaded into python using a function called load_questions. Within the function the csv file "question.csv" will be loaded and an empty questions list is created. Using a for loop it will loop through each row in the CSV file and add it into the empty list and convert each question into a dictionary with the four ooptions. The answer values in the CSV file are represented as an integer so that pyton can read it by its index. 
+## loading questions
+ The questions are stored in a CSV file which is pulled and loaded into python using a function called load_questions.
+ CSV structure: questions,option1,option2,option3,option4,answer```
+ 
+ In quiz_data.py the function "load_questions" the csv file "question.csv" will be loaded and an empty questions list is created.
 
-CSV structure: questions,option1,option2,option3,option4,answer
+ ```python
+ def load_questions(filepath='question.csv'): #creating function to load questions from csv file
+    questions = [] #empty list to store questions
+ ```
+  Using a for loop it will loop through each row in the CSV file and add it into the empty list and convert each question into a dictionary with the four ooptions. The answer values in the CSV file are represented as an integer so that pyton can read it by its index. 
+
+  ```python
+   for row in reader: #will loop for each row in questions.csv file
+            questions.append({ #adding to the empty list
+                "questions":row["questions"],
+                "options":[
+                    row["option1"],
+                    row["option2"],
+                    row["option3"],
+                    row["option4"],
+                ],
+                "answer":int(row["answer"])-1 #index is always 0 so -1
+            })
+    return questions
+```
+
+
+
 # Testing
 
 ## Manual testing
+| Test | Purpose |
+|------------|---------|
+
+## automation testing
+
+
 # Documentatuon
 ## Technical Documentation
 
