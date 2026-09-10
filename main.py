@@ -2,39 +2,40 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 
-from quiz_data import load_questions
+from quiz_data import load_questions #import function to get questions
 
 questions = load_questions()
 
-class Quizzapp(tk.Tk):
-    def __init__(self,questions):
+class Quizzapp(tk.Tk): 
+    def __init__(self,questions): #creating window 
         super().__init__()
         self.title("Defect Management quiz")
         self.geometry('600x500')
         self.configure(bg='#F1D983')
 
-        self.questions = questions
-        self.current_question = 0
+        self.questions = questions #storing questions
+        self.current_question = 0 #will start on first question, index always starts on 0
         self.score = 0
-        self.name=tk.StringVar()
+        self.name=tk.StringVar() #stores user's name
         self.answer_var = tk.IntVar(value=-1)
         self.answer_vars = []
 
-        self.name_label=tk.Label(
+        self.name_label=tk.Label( #creating Name widget 
             self,
             text="Please enter your name in the box below",
             bg="#F1D983",
-            fg="#fff",
+            fg="black",
             font=("Arial",20)
         )
 
-        self.name_label.pack(pady=10)
+        self.name_label.pack(pady=10)# packing name and displaying
 
         self.name_entry = tk.Entry(
             self,
             textvariable=self.name,
             font=("Arial",20),
-            fg="#fff"
+            fg="black",
+            bg="#F1D983"
         )
 
         self.name_entry.pack(pady=10)
@@ -55,6 +56,11 @@ class Quizzapp(tk.Tk):
             button = tk.Button(
                 self,
                 width=40,
+                bg="#F1D983",
+                fg="black",
+                activebackground="#F1D983",
+                relief="flat",
+                borderwidth=0,
                 command=lambda i=i: self.check_answer(i)
             )
             button.pack(pady=8)
