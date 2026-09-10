@@ -152,6 +152,6 @@ class Quizzapp(tk.Tk):
                  self.name.get(),
                  self.score
             ])
-
-app = Quizzapp(questions)
-app.mainloop()
+if __name__=="__main__":
+    app = Quizzapp(questions)
+    app.mainloop()
