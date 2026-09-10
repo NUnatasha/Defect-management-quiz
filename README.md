@@ -155,7 +155,7 @@ Then add an if statemnet at the both of the code which allow it to work successf
 if __name__=="__main__":
     app = Quizzapp(questions)
     app.mainloop()
-```s
+```
 
 # Documentatuon
 
