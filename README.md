@@ -5,9 +5,10 @@ this is my summative two code for IFCP course, year one
 1. Introduction
 2. Design
 3. Development
-4. User Documentation
-5. Technical Documentation
-6. Evaluation 
+4. Testing
+5. User Documentation
+6. Technical Documentation
+7. Evaluation 
 
 # Introduction
 This project is a simple multiple choice quiz using python(https://www.python.org) and Tkinter (). The purpose of this quiz application is to test the user on their knowledge on defect Management. Five qustions multiple choice questions are displayed one at a time allow the user to select one option out of four.
@@ -37,4 +38,10 @@ This project is a simple multiple choice quiz using python(https://www.python.or
 
 ## Project Structure
 
-## Technical Documentation
+# Testing
+
+# Technical Documentation
+
+# User Documentation
+
+# Evalution
