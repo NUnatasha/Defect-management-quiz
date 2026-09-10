@@ -109,6 +109,23 @@ List of programming languages amnd libaries used.
 
 ## automation testing
 
+First I checked that my unit testing framwork was working by assert the value 1 to true which is correct.
+```python
+import unittest
+from quiz_data import load_questions
+
+class TestSmoke(unittest.TestCase):
+
+    def test_load_questions_runs(self):
+        self.assertTrue(1)
+
+if __name__=="__main__":
+    unittest.main(verbosity=1)
+``` 
+![proof of unit test 1](image-2.png)
+
+
+
 # Documentatuon
 
 ## User Documentation
