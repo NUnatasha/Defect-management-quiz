@@ -156,6 +156,12 @@ if __name__=="__main__":
     app = Quizzapp(questions)
     app.mainloop()
 ```
+|Test|Test Type|Test Data|Expected result|Actutal Result|Status|
+|----|---------|---------|---------------|--------------|------|
+|Test that automated test is working|Smoke test| |Test is with no errors|Working as expected|Pass|
+|Check the questions are loaded from the CSV file|Unit test|load_question()|Questions are displayed|Working as expected|Pass|
+|check valid names pass|unit test|"Natasha" "Natasha Zinyuke"| function returns True|working as expected|Pass|
+check valid names pass|unit test|"Natasha0001" "#Natashaisthenumber1best"| function returns False|working as expected|Pass|
 
 # Documentatuon
 
