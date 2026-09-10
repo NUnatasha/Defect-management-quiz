@@ -5,6 +5,9 @@ import csv
 
 from quiz_data import load_questions #import function to get questions
 
+def character_check(name:str) -> bool:
+        return not re.search(r"\d",name)
+
 questions = load_questions()
 
 class Quizzapp(tk.Tk): 
@@ -141,9 +144,6 @@ class Quizzapp(tk.Tk):
            self.save_results()
            messagebox.showinfo("Well done! You completed the quiz!")
            self.destroy()
-
-    def character_check(name:str) -> bool:
-        return not re.search(r"\d",name)
 
     def save_results(self):
         with open("results.csv",mode="a",newline="") as file:
