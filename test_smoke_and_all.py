@@ -1,5 +1,6 @@
 import unittest
 from quiz_data import load_questions
+from main import character_check
 
 class TestSmoke(unittest.TestCase):
 
@@ -15,8 +16,8 @@ class TestSmoke(unittest.TestCase):
         self.assertTrue(character_check("Natasha Zinyuke"))
 
     def test_character_check_unhappy(self):
-        self.assertTrue(character_check("Natasha001"))
-        self.assertTrue(character_check("#Natashaisthenumber1best"))
+        self.assertFalse(character_check("Natasha001"))
+        self.assertFalse(character_check("#Natashaisthenumber1best"))
 
 if __name__=="__main__":
-    unittest.main(verbosity=2)
+    unittest.main(verbosity=4)
