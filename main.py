@@ -124,6 +124,7 @@ class Quizzapp(tk.Tk):
                 text="Inorrect!",
                 fg="red",
             )
+        self.next_button.config(state="normal")
 
     def next_question(self):
         self.current_question +=1
