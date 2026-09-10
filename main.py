@@ -127,8 +127,15 @@ class Quizzapp(tk.Tk):
         self.next_button.config(state="normal")
 
     def next_question(self):
-        self.current_question +=1
-        self.show_question()
+        self.current_question += 1
+        if self.current_question < len(self.questions):
+            self.show_questions()
+        else:
+            self.save_results()
+            messagebox.showinfo(
+                "Well done! You completed the quiz!"
+            )
+            self.destroy()
 
     def save_results(self):
         with open("results.csv",mode="a",newline="") as file:
