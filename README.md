@@ -11,7 +11,11 @@ this is my summative two code for IFCP course, year one
 7. Evaluation 
 
 # Introduction
-This project is a simple multiple choice quiz using python(https://www.python.org) and Tkinter (). The purpose of this quiz application is to test the user on their knowledge on defect Management. Five qustions multiple choice questions are displayed one at a time allow the user to select one option out of four.
+As new websites, apps and software system are becoming increasingly important to business operations so does the quality. It is important that these applications are efficient, reliable and provide great customer sattisfaction. 
+
+The Software Development Life Cycle (SDLC) includes the important part of testing and defect managemnmet plays a key role in that. As you perform functional testing, regression testing, unit testing, system testing and User Acceptance Testing (UAT) bugs and defects are going to found. Defect managemnet can ensure that these bugs/defects are identified correctly, tracked and auditted properly, prioritised during testing. Making sure that the relevant employees have a strong understanding and knowledge around this proccess can help reduce failures, improve quality of software and have effective collaboration for the resolution
+
+This project is a simple multiple choice quiz using python(https://www.python.org) and Tkinter (). The purpose of this quiz application is to test the user on their knowledge on defect Management and to provide training. Five qustions multiple choice questions are displayed one at a time allow the user to select one option out of four.
 
 # Design 
 
@@ -37,11 +41,21 @@ This project is a simple multiple choice quiz using python(https://www.python.or
 3. CSV module
 
 ## Project Structure
+ hehrheeuj
 
+The questions are stored in a CSV file which is pulled and loaded into python using a function called load_questions. Within the function the csv file "question.csv" will be loaded and an empty questions list is created. Using a for loop it will loop through each row in the CSV file and add it into the empty list and convert each question into a dictionary with the four ooptions. The answer values in the CSV file are represented as an integer so that pyton can read it by its index. 
+
+CSV structure: questions,option1,option2,option3,option4,answer
 # Testing
+
+## Manual testing
 
 # Technical Documentation
 
 # User Documentation
 
 # Evalution
+- add date and time to show date of when user takes quiz
+- adding more complex quix 
+- adding levels depending on users confidence
+- leaderboard to encourage people to take the quiz
