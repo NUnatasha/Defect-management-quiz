@@ -114,10 +114,14 @@ List of programming languages amnd libaries used.
 #### Step 1: Lanuch the application
 #### Step 2: Enter your name
 #### Step 3: Read questions carefully and click your chosen answer
-#### Step 4: Once feedback is recieved click next to move onto the next question
+#### Step 4: Once feedback is recieved click next to move onto the next question
 #### Step: Repeat steps 3 and 4 until quiz is complete
 
 ## Technical Documentation
+
+```bash
+git clone https://github.com/NUnatasha/Defect-management-quiz-summative-two-/blob/main/README.md
+```
 
 # Evalution
 - add date and time to show date of when user takes quiz
