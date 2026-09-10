@@ -67,7 +67,7 @@ List of programming languages amnd libaries used.
  |-quiz_data.py
  |-results.csv
 
-## loading questions
+## Loading questions
  The questions are stored in a CSV file which is pulled and loaded into python using a function called load_questions.
  CSV structure: questions,option1,option2,option3,option4,answer```
  
@@ -108,11 +108,16 @@ List of programming languages amnd libaries used.
 
 ## automation testing
 
-
 # Documentatuon
-## Technical Documentation
 
 ## User Documentation
+Step 1: Lanuch the application
+Step 2: Enter your name
+Steo 3: Read questions carefully and click your chosen answer
+Step 4: Once feedback is recieved click next to move onto the next question
+Step: Repeat steps 3 and 4 until quiz is complete
+
+## Technical Documentation
 
 # Evalution
 - add date and time to show date of when user takes quiz
