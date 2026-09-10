@@ -18,6 +18,7 @@ This project is a simple multiple choice quiz using python(https://www.python.or
 
 # Design 
 ## Figma Design
+![Defect Managemnet Figma Design](image.png)
 
 
 ## Functional Requirements
@@ -36,6 +37,8 @@ This project is a simple multiple choice quiz using python(https://www.python.or
 4. Readable code
 
 ## Tech Stack
+
+List of programming languages amnd libaries used.
 
 | Technology | Purpose |
 |------------|---------|
@@ -64,7 +67,7 @@ CSV structure: questions,option1,option2,option3,option4,answer
 # Documentatuon
 ## Technical Documentation
 
-###Documentatuon User Documentation
+## User Documentation
 
 # Evalution
 - add date and time to show date of when user takes quiz
