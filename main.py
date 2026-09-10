@@ -1,14 +1,14 @@
-import tkinter as tk
+import tkinter as tk #importing tkinter for GUI
 import re # used to check names
-from tkinter import messagebox
-import csv
+from tkinter import messagebox #import messagebox for end of quiz messsage
+import csv #import CSV 
 
 from quiz_data import load_questions #import function to get questions
 
-def character_check(name:str) -> bool:
+def character_check(name:str) -> bool: # function to check that imputtted names don't have numbers
         return not re.search(r"\d",name)
 
-questions = load_questions()
+questions = load_questions() 
 
 class Quizzapp(tk.Tk): 
     def __init__(self,questions): #creating window 
@@ -32,9 +32,9 @@ class Quizzapp(tk.Tk):
             font=("Arial",20)
         )
 
-        self.name_label.pack(pady=10)# packing name and displaying
+        self.name_label.pack(pady=10) #packing name and displaying
 
-        self.name_entry = tk.Entry(
+        self.name_entry = tk.Entry( #Name input box
             self,
             textvariable=self.name,
             font=("Arial",20),
@@ -42,7 +42,7 @@ class Quizzapp(tk.Tk):
             bg="#F1D983"
         )
 
-        self.name_entry.pack(pady=10)
+        self.name_entry.pack(pady=10) #packing and displaying
 
         self.question_label=tk.Label(
             self,
@@ -52,7 +52,7 @@ class Quizzapp(tk.Tk):
             wraplength=500
         )
 
-        self.question_label.pack(pady=15)
+        self.question_label.pack(pady=15) #packing and displaying
 
         self.choice_buttons = []
 
@@ -77,7 +77,7 @@ class Quizzapp(tk.Tk):
             font=("Arial",14)
         )
 
-        self.feedback_label.pack()
+        self.feedback_label.pack() #packing and displaying
 
         self.score_label = tk.Label(
             self,
@@ -85,7 +85,7 @@ class Quizzapp(tk.Tk):
             bg="#F1D983",
             font=("Arial",14)
         )
-        self.score_label.pack()
+        self.score_label.pack() #packing and displaying
 
         self.next_button = tk.Button(
             self,
@@ -105,19 +105,19 @@ class Quizzapp(tk.Tk):
             text=question["questions"]
         )
 
-        for i in range (4):
+        for i in range (4): # for loop for the four options
             self.choice_buttons[i].config(
                 text=question["options"][i],
                 state="normal"
             )
 
         self.feedback_label.config(text="")
-        self.next_button.config(state="disabled")
+        self.next_button.config(state="disabled") #button is disabled until option is clicked
 
     def check_answer(self,choice):
         question = self.questions[self.current_question]
 
-        if choice == question["answer"]:
+        if choice == question["answer"]: #calculating scores
             self.score += 1
 
             self.score_label.config(
@@ -125,33 +125,35 @@ class Quizzapp(tk.Tk):
             )
 
             self.feedback_label.config(
-                text="Correct!",
+                text="Correct!", #feedback
                 fg="green",
             )
 
         else:
             self.feedback_label.config(
                 text="Inorrect!",
-                fg="red",
+                fg="red", #feedback
             )
-        self.next_button.config(state="normal")
+        self.next_button.config(state="normal") #enables next button from disabled
 
     def next_question(self):
-        self.current_question += 1
+        self.current_question += 1 #moves to next question
         if self.current_question < len(self.questions):
             self.show_questions()
         else:
            self.save_results()
            messagebox.showinfo("Well done! You completed the quiz!")
-           self.destroy()
+           self.destroy() #close application
 
-    def save_results(self):
+    def save_results(self): #saving user's name and score to result.csv
         with open("results.csv",mode="a",newline="") as file:
             writer = csv.writer(file)
             writer.writerow([
                  self.name.get(),
                  self.score
             ])
+
+#starts window         
 if __name__=="__main__":
     app = Quizzapp(questions)
-    app.mainloop()
+    app.mainloop() 
