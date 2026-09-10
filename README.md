@@ -10,7 +10,9 @@ this is my summative two code for IFCP course, year one
 6. Evaluation 
 
 # Introduction
-As new websites, apps and software system are becoming increasingly important to business operations so does the quality. It is important that these applications are efficient, reliable and provide great customer sattisfaction. 
+As new websites, apps and software system become increasingly more important to businesses so does the need to ensure their quality. Especially, when they are heavily relied on and made to provide efficiency and be a key part of the business functionality. It is critical that these applications are efficient, reliable and are provide a postive and great customer experience. 
+
+In my role as defect manager and working within the IBM test team I have noticed the lack of knowledge around defects. How should they be handled? How do they get resolved? Who is working on this and so on. Questions like this frequently come up and it is down to the lack of knowledge around defect management. This is why providing training on defect management would lead to faster resolutions, clear and neccessary commiunication and better organisation.This would also benefit new members who come in not knowing how we operate and work with these defects
 
 The Software Development Life Cycle (SDLC) includes the important part of testing and defect managemnmet plays a key role in that. As you perform functional testing, regression testing, unit testing, system testing and User Acceptance Testing (UAT) bugs and defects are going to found. Defect managemnet can ensure that these bugs/defects are identified correctly, tracked and auditted properly, prioritised during testing. Making sure that the relevant employees have a strong understanding and knowledge around this proccess can help reduce failures, improve quality of software and have effective collaboration for the resolution
 
@@ -179,6 +181,10 @@ git clone https://github.com/NUnatasha/Defect-management-quiz-summative-two-/blo
 ```
 
 # Evalution
+In conclusion, this project is successful in developing a simple defect management quiz whichh i'm sure will help assess users training on some basic defect concepts. It meets majority of the functional requirements ensuring that the user can successfully use the quiz correctly with the steps quided. 
+
+However, some improvements to make in the future that will make this a stronger and much more useful is adding more complex questions. Adding harder questions will really test users and highlight any areas which more guidance or clarity is needed. I also believe to really encorage users is to added a leaderboard. Since scores are saved successfully into results.csv a leader can help motivate and create healthy competition that will encourage users to take the time to learn more surrounding defects.
+
 - add date and time to show date of when user takes quiz
 - adding more complex quix 
 - adding levels depending on users confidence
