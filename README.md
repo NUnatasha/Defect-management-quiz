@@ -139,10 +139,23 @@ then I add character_check functions that will check if the validation of names 
         self.assertTrue(character_check("Natasha Zinyuke"))
 
 def test_character_check_unhappy(self):
-    self.assertTrue(character_check("Natasha001"))
-    self.assertTrue(character_check("#Natashaisthenumber1best"))
+    self.assertFalse(character_check("Natasha001"))
+    self.assertFalse(character_check("#Natashaisthenumber1best"))
 ```
 ![Proof of unit test 3](image-4.png)
+
+To make this test now work and run correctly I imported re which will check through the inputted names and look for any integers. 
+```python
+def character_check(name:str) -> bool:
+    return not re.search(r"\d",name)
+```
+
+Then add an if statemnet at the both of the code which allow it to work successfully.
+```python
+if __name__=="__main__":
+    app = Quizzapp(questions)
+    app.mainloop()
+```s
 
 # Documentatuon
 
