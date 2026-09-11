@@ -375,4 +375,4 @@ In conclusion, this project is successful in developing a simple defect manageme
 
 However, some improvements I will make in the future that will make this a stronger and much more useful is adding more complex questions. Adding harder questions will really test users and highlight any areas which require more guidance or clarity. I also believe to really encorage users is to added a leaderboard. Since scores are saved successfully into results.csv a leader can help motivate and create healthy competition that will encourage users to take the time to learn more surrounding defects.
 
-Furthermore, I think adding a date and time by import would improve the score taking so progress can be tracked and checked. Overall, I think this project works well and some improvements could be really beneficial for staff/users
+Furthermore, I think adding a date and time by import would improve the score taking so progress can be tracked and checked. I believe this project works well and some improvements could be really beneficial for staff/users
