@@ -10,17 +10,17 @@ this is my summative two code for IFCP course, year one
 6. Evaluation 
 
 # Introduction
-As new websites, apps and software system become increasingly more important to businesses so does the need to ensure their quality. Especially, when these applications are heavily relied on and made to provide efficiency or be a key part of the business functionality. It is critical that these applications are efficient, reliable and are provide a postive and great customer experience. 
+As new websites, apps and software system become increasingly more important to businesses so does the need to ensure their quality. Especially, when these applications are heavily relied on and made to provide efficiency or be a key part of the business' functionality. It is critical that these applications are efficient, reliable and are provide a postive and great customer experience. 
 
-In my role as defect manager and working within the IBM test team I have noticed the lack of knowledge around defects. How should they be handled? How do they get resolved? Who is working on this and so on. Questions like this frequently come up and it is down to the lack of knowledge around defect management. This is why providing training on defect management would lead to faster resolution time, clear and neccessary commiunication and better organisation. It would also benefit new members who are unaware of how we operate and work with these defects
+In my role as defect manager and working within the IBM test team I have noticed the lack of knowledge around defects. How should they be handled? How do they get resolved? Who is working on this and so on. Questions like this frequently come up and it is down to the lack of knowledge around defect management. This is why providing short training on defect management would lead to faster resolution time, clear and neccessary commiunication and better organisation. It would also benefit new members who are unaware of how we operate and work with these defects
 
-The Software Development Life Cycle (SDLC) includes the important part of testing and defect managemnmet plays a key role in that. As you perform functional testing, regression testing, unit testing, system testing and User Acceptance Testing (UAT), etc bugs and defects are going to found. Defect managemnet can ensure that these bugs/defects are identified correctly, tracked and auditted properly, prioritised during testing. Making sure that the relevant employees have a strong understanding and knowledge around this proccess can help reduce failures, improve quality of software and have effective collaboration for the resolution
+The Software Development Life Cycle (SDLC) includes the important part of testing; and defect managemnmet plays a key role in that. As you perform functional testing, regression testing, unit testing, system testing and User Acceptance Testing (UAT), etc bugs and defects are going to found. Defect managemnet can ensure that these bugs/defects are identified correctly, tracked and auditted properly, prioritised during testing. Making sure that the relevant employees have a strong understanding and knowledge around this proccess can help reduce mistakess, improve quality of software and have effective collaboration for the resolution
 
 This project is a simple multiple choice quiz using python(https://www.python.org) and Tkinter (https://docs.python.org/3/library/tk.html). The purpose of this quiz application is to test the user on their knowledge on defect Management and to provide training. Five qustions multiple choice questions are displayed one at a time allow the user to select one option out of four.
 
 # Design 
 ## Figma Design
-This is the initial design for the quiz. The user would be greeted with a welecome screen in which they are instructed to their enter name. Then one question will show up at a time display the question at the top and the four option buttons beneath. Once the user clicked an option the feedback will be shown either "Correct" or "Incorrect" and move onto the next question. Each time the score would be calculated and show in the left-bottom corner. Initially I had designe the user journey to only be a few simple steps:
+This is the initial design for the quiz. The user would be greeted with a welecome screen in which they are instructed to enter their name. Then one question will show up at a time, displaying the question at the top and the four option buttons beneath. Once the user clicked an option the feedback will be shown either "Correct" or "Incorrect" and move onto the next question. Each time the score would be calculated and show in the left-bottom corner. Initially I had designe the user journey to only be a few simple steps:
 1. Open app
 2. Enter name and submit
 3. Click your choice
@@ -28,7 +28,7 @@ This is the initial design for the quiz. The user would be greeted with a weleco
 
 ![Defect Managemnet Figma Design](image.png)
 
-I have slighly changed from the initial design and instead the user is allowed to change go to the next question on their own accord. I decided this so that the user can then review the question and try understand as to why the may have gotten it wrong instead of immediately switch to the next question and not having any time memorise or learn. 
+I have slighly changed from the initial design. Instead the user is allowed to change go to the next question on their own accord. I decided this so that the user can then review the question and try understand as to why the may have gotten it wrong instead of immediately switch to the next question and not having any time memorise or learn. 
 
 
 ## Functional Requirements
@@ -48,7 +48,7 @@ I have slighly changed from the initial design and instead the user is allowed t
 
 ## Tech Stack
 
-List of programming languages amnd libaries used.
+List of programming languages amnd libaries used to create the quiz.
 
 | Technology | Purpose |
 |------------|---------|
@@ -65,10 +65,11 @@ List of programming languages amnd libaries used.
 ## Project Structure
  Defect-Management--uiz-summative-two
  |
- |-main.py
- |-question.csv
- |-quiz_data.py
- |-results.csv
+ |--main.py
+ |--question.csv
+ |--quiz_data.py
+ |--results.csv
+ |--test_smoke_and_all.py
 
 ## Loading questions
  The questions are stored in a CSV file which is pulled and loaded into python using a function called load_questions.
@@ -106,21 +107,19 @@ import csv #import CSV
 from quiz_data import load_questions #import function to get questions
 
 ```
-
-Now underneath the code is a charcter check function that will check if the names inputtedb have any integer characters within them. I added this once my code was finished to purposely get a unit test fail. It is outside the class as I need the test file to read just that function and not the whole class.
+Now underneath the code is a character check function that will check if the names inputted have any integer characters within them. I added this once my code was finished to purposely get a unit test fail. It is outside the class as I need the test file to read just that function and not the whole class.
 ```python
 def character_check(name:str) -> bool: # function to check that imputtted names don't have numbers
     return not re.search(r"\d",name)
 ```
-In the main.py file I have built a class.
-it will first create and design the GUI window that is titled and with a background that is a pastel yellow colour and a small rectangle size. 
+In the main.py file I have built a class. It will first create and design the GUI window.
 ```python
 class Quizzapp(tk.Tk): 
     def __init__(self,questions): #creating window 
         super().__init__()
         self.title("Defect Management quiz")
-        self.geometry('600x500')
-        self.configure(bg='#F1D983')
+        self.geometry('600x500')#rectangle sized
+        self.configure(bg='#F1D983')#pastel yellow background
 ```
 
 Here I have created variables that will be throught the app. 
@@ -216,6 +215,11 @@ self.name_label=tk.Label( #creating Name widget
 ```
 
 Near the bottom of the code i have written functions that each have a role in ensure that the code works correct give the correct outputs and 
+- show_quesion(self) - shows the cuureent questin and four option buttons, it will also disable the next button until an option is clicked,
+- check_answer(self,choice) - will check the chosen option against answers saved from CSV file  and output feedback. I correct answer will so add to the score aswell. 
+- next_question(self) - will move onto the next question until each question is shown then it will present an error message and close.
+- save_results - will save the name and score in "results.csv" file
+
 ```python
 def show_questions(self):
         question = self.questions[self.current_question]
@@ -276,11 +280,14 @@ def show_questions(self):
 # Testing
 
 ## Manual testing
+Whilst coding I started with manual testing, testing the code was functional.
+
 |Test|Test Data|Expected Result|Actual Result|Status|
 |----|---------|---------------|-------------|------|
 |Launch app|Run main.py file|GUI window opens successfully|works as expected|Pass|
 |Enter valid name|"Natasha"|Name accepted and saved into csv file once quiz is completed|Works as expected|Pass|
 |Enter invalid naem|123|Name not accepted and error message pops up|
+|recieve red "Incorrect" when answer is wrong| red "Incorrect" message is shown|Working as exoected|pass|
 
 
 ## automation testing
@@ -364,7 +371,7 @@ cd Defect-managemnet-quiz-summative-two
 - test_quiz.py - File contains automated unit testing
 
 # Evalution
-In conclusion, this project is successful in developing a simple defect management quiz whichh i'm sure will help assess users and teach them on some basic defect concepts. It meets majority of the functional requirements ensuring that the user can successfully use the quiz correctly with the steps quided. 
+In conclusion, this project is successful in developing a simple defect management quiz whichh i'm sure will help assess users and teach them on some basic defect concepts. It meets majority of the functional requirements ensuring that the user can successfully use the quiz correctly with the steps guided backs. 
 
 However, some improvements I will make in the future that will make this a stronger and much more useful is adding more complex questions. Adding harder questions will really test users and highlight any areas which require more guidance or clarity. I also believe to really encorage users is to added a leaderboard. Since scores are saved successfully into results.csv a leader can help motivate and create healthy competition that will encourage users to take the time to learn more surrounding defects.
 
