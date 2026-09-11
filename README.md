@@ -96,8 +96,175 @@ List of programming languages amnd libaries used.
             })
     return questions
 ```
+In the main.py ile I begin by importing libaries, the csv files, and the testing framework
+```python
+import tkinter as tk #importing tkinter for GUI
+import re # used to check names
+from tkinter import messagebox #import messagebox for end of quiz messsage
+import csv #import CSV 
 
+from quiz_data import load_questions #import function to get questions
 
+```
+
+Now underneath the code is a charcter check function that will check if the names inputtedb have any integer characters within them. I added this once my code was finished to purposely get a unit test fail. It is outside the class as I need the test file to read just that function and not the whole class.
+```python
+def character_check(name:str) -> bool: # function to check that imputtted names don't have numbers
+    return not re.search(r"\d",name)
+```
+In the main.py file I have built a class.
+it will first create and design the GUI window that is titled and with a background that is a pastel yellow colour and a small rectangle size. 
+```python
+class Quizzapp(tk.Tk): 
+    def __init__(self,questions): #creating window 
+        super().__init__()
+        self.title("Defect Management quiz")
+        self.geometry('600x500')
+        self.configure(bg='#F1D983')
+```
+
+This is sotoring
+```python
+self.questions = questions #storing questions
+        self.current_question = 0 #will start on first question, index always starts on 0
+        self.score = 0
+        self.name=tk.StringVar() #stores user's name
+        self.answer_var = tk.IntVar(value=-1)
+        self.answer_vars = []
+```
+This section does...
+```python
+self.name_label=tk.Label( #creating Name widget 
+            self,
+            text="Please enter your name in the box below",
+            bg="#F1D983",
+            fg="black",
+            font=("Arial",20)
+        )
+
+        self.name_label.pack(pady=10) #packing name and displaying
+
+        self.name_entry = tk.Entry( #Name input box
+            self,
+            textvariable=self.name,
+            font=("Arial",20),
+            fg="black",
+            bg="#F1D983"
+        )
+
+        self.name_entry.pack(pady=10) #packing and displaying
+
+        self.question_label=tk.Label(
+            self,
+            text="",
+            bg="#F1D983",
+            font=("Arial",16),
+            wraplength=500
+        )
+
+        self.question_label.pack(pady=15) #packing and displaying
+
+        self.choice_buttons = []
+
+        for i in range(4):
+            button = tk.Button(
+                self,
+                width=40,
+                bg="#F1D983",
+                fg="black",
+                activebackground="#F1D983",
+                relief="flat",
+                borderwidth=0,
+                command=lambda i=i: self.check_answer(i)
+            )
+            button.pack(pady=8)
+            self.choice_buttons.append(button)
+
+        self.feedback_label = tk.Label(
+            self,
+            text="",
+            bg="#F1D983",
+            font=("Arial",14)
+        )
+
+        self.feedback_label.pack() #packing and displaying
+
+        self.score_label = tk.Label(
+            self,
+            text="Score : 0",
+            bg="#F1D983",
+            font=("Arial",14)
+        )
+        self.score_label.pack() #packing and displaying
+
+        self.next_button = tk.Button(
+            self,
+            text="Next",
+            command=self.next_question,
+            state="disabled"
+        )
+
+        self.next_button.pack(pady=10)
+
+```
+
+Near the bottom of the code i have written for functions: 
+```python
+def show_questions(self):
+        question = self.questions[self.current_question]
+
+        self.question_label.config(
+            text=question["questions"]
+        )
+
+        for i in range (4): # for loop for the four options
+            self.choice_buttons[i].config(
+                text=question["options"][i],
+                state="normal"
+            )
+
+        self.feedback_label.config(text="")
+        self.next_button.config(state="disabled") #button is disabled until option is clicked
+
+    def check_answer(self,choice):
+        question = self.questions[self.current_question]
+
+        if choice == question["answer"]: #calculating scores
+            self.score += 1
+
+            self.score_label.config(
+                text=f"Score: {self.score}"
+            )
+
+            self.feedback_label.config(
+                text="Correct!", #feedback
+                fg="green",
+            )
+
+        else:
+            self.feedback_label.config(
+                text="Inorrect!",
+                fg="red", #feedback
+            )
+        self.next_button.config(state="normal") #enables next button from disabled
+
+    def next_question(self):
+        self.current_question += 1 #moves to next question
+        if self.current_question < len(self.questions):
+            self.show_questions()
+        else:
+           self.save_results()
+           messagebox.showinfo("Well done! You completed the quiz!")
+           self.destroy() #close application
+
+    def save_results(self): #saving user's name and score to result.csv
+        with open("results.csv",mode="a",newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                 self.name.get(),
+                 self.score
+            ])
+```
 
 # Testing
 
@@ -185,7 +352,6 @@ In conclusion, this project is successful in developing a simple defect manageme
 
 However, some improvements to make in the future that will make this a stronger and much more useful is adding more complex questions. Adding harder questions will really test users and highlight any areas which more guidance or clarity is needed. I also believe to really encorage users is to added a leaderboard. Since scores are saved successfully into results.csv a leader can help motivate and create healthy competition that will encourage users to take the time to learn more surrounding defects.
 
-- add date and time to show date of when user takes quiz
-- adding more complex quix 
-- adding levels depending on users confidence
-- leaderboard to encourage people to take the quiz
+Furthermore, I think adding a date and time by import would improve the score taking so progress can be tracked and checked.
+
+overall, I think this project works well and some improvements could be really beneficial for staff/users
