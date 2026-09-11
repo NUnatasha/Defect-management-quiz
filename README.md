@@ -287,7 +287,7 @@ Whilst coding I started with manual testing, testing the code was functional.
 |Launch app|Run main.py file|GUI window opens successfully|works as expected|Pass|
 |Enter valid name|"Natasha"|Name accepted and saved into csv file once quiz is completed|Works as expected|Pass|
 |Enter invalid naem|123|Name not accepted and error message pops up|
-|recieve red "Incorrect" when answer is wrong| red "Incorrect" message is shown|Working as exoected|pass|
+|recieve red "Incorrect" when answer is wrong|Incorrect option|red "Incorrect" message is shown|Working as exoected|pass|
 
 
 ## automation testing
