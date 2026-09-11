@@ -123,7 +123,12 @@ class Quizzapp(tk.Tk):
         self.configure(bg='#F1D983')
 ```
 
-This is sotoring
+Here I have created variables that will be throught the app. 
+- self.questions will store all the questions from "question.csv"
+- self.current_question will start the quiz from question 1 (index=0) and track the question as they are displayed
+- self.score is going to calculate the users score starting at zero
+- self.name will store the inputted name
+
 ```python
 self.questions = questions #storing questions
         self.current_question = 0 #will start on first question, index always starts on 0
@@ -132,7 +137,9 @@ self.questions = questions #storing questions
         self.answer_var = tk.IntVar(value=-1)
         self.answer_vars = []
 ```
-This section does...
+This section is also designing the GUI. The labels are displaying the questions and feedback, as well as the instruction "Please enter your name in the box". Buttons are used for the four options and and next button that the user will interact with. The name entry field allows the user to input. 
+
+The for loop will loop through the five questions improve the maintainability of code by reducing duplicates and improveing readability.
 ```python
 self.name_label=tk.Label( #creating Name widget 
             self,
@@ -208,7 +215,7 @@ self.name_label=tk.Label( #creating Name widget
 
 ```
 
-Near the bottom of the code i have written for functions: 
+Near the bottom of the code i have written functions that each have a role in ensure that the code works correct give the correct outputs and 
 ```python
 def show_questions(self):
         question = self.questions[self.current_question]
