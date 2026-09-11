@@ -349,10 +349,19 @@ check valid names pass|unit test|"Natasha0001" "#Natashaisthenumber1best"| funct
 #### Step: Repeat steps 3 and 4 until quiz is complete
 
 ## Technical Documentation
-
+To download or save this project to your device run this command in the terminal
 ```bash
 git clone https://github.com/NUnatasha/Defect-management-quiz-summative-two-/blob/main/README.md
 ```
+After clone use this line to move into folder
+
+```bash
+cd Defect-managemnet-quiz-summative-two
+```
+- main.py - File contains the the app functionality, Graphical User Interface (GUI) 
+- quiz_data.py - file contains "load_question()" function that loads questions from csv
+- results.csv - File contains names and scores of users who have attempted teh quiz
+- test_quiz.py - File contains automated unit testing
 
 # Evalution
 In conclusion, this project is successful in developing a simple defect management quiz whichh i'm sure will help assess users training on some basic defect concepts. It meets majority of the functional requirements ensuring that the user can successfully use the quiz correctly with the steps quided. 
